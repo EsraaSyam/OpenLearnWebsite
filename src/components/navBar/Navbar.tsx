@@ -6,7 +6,7 @@ const Navbar = () => {
         <NavbarContainer>
             <Logo>OpenLearn</Logo>
             <NavButtons>
-                <Button >Register</Button>
+                <Button >Get started</Button>
                 <Button >Login</Button>
             </NavButtons>
         </NavbarContainer>
