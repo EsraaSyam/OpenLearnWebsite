@@ -5,7 +5,7 @@ export const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #1E3A8A;
+  background-color: #A435F0;
   color: white;
   position: fixed;
   top: 0;
@@ -52,7 +52,7 @@ export const Button = styled.button`
 
   &:hover {
     background: white;
-    color: #1E3A8A;
+    color: #A435F0;
   }
 
   }
