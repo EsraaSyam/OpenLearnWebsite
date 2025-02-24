@@ -97,4 +97,4 @@ Error generating stack: `+u.message+`
   }
 
   }
-`,Ov=()=>Zl.jsxs(Tv,{children:[Zl.jsx(zv,{children:"OpenLearn"}),Zl.jsxs(_v,{children:[Zl.jsx(gd,{children:"Register"}),Zl.jsx(gd,{children:"Login"})]})]});function Dv(){return Zl.jsx(Zl.Fragment,{children:Zl.jsx(Ov,{})})}py.createRoot(document.getElementById("root")).render(Zl.jsx(Ti.StrictMode,{children:Zl.jsx(Dv,{})}));
+`,Ov=()=>Zl.jsxs(Tv,{children:[Zl.jsx(zv,{children:"OpenLearn"}),Zl.jsxs(_v,{children:[Zl.jsx(gd,{children:"Get started"}),Zl.jsx(gd,{children:"Login"})]})]});function Dv(){return Zl.jsx(Zl.Fragment,{children:Zl.jsx(Ov,{})})}py.createRoot(document.getElementById("root")).render(Zl.jsx(Ti.StrictMode,{children:Zl.jsx(Dv,{})}));
