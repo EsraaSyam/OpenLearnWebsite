@@ -1,6 +1,6 @@
 import { useState } from "react";
-import axios from "axios";
 import { RegisterContainer, FormWrapper, Title, Input, RegisterButton } from "./Register.styles";
+import apiClient from "../../utils/apiClient";
 
 const Register = () => {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", password: "" });
@@ -17,10 +17,9 @@ const Register = () => {
     setError(null);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/v1/auth/register", formData);
+      const response = await apiClient.post("/auth/register", formData);
       console.log("User registered successfully:", response.data);
       alert("Account created successfully!");
-      
     } catch (err: any) {
       console.log("Error: ", err);
       console.error("Registration failed:", err.response?.data?.message || err.message);
