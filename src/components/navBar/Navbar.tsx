@@ -1,4 +1,5 @@
 import { Button, NavbarContainer, NavButtons, Logo } from "./Navbar.styles";
+import { Link } from 'react-router-dom';
 
 
 const Navbar = () => {
@@ -6,8 +7,12 @@ const Navbar = () => {
         <NavbarContainer>
             <Logo>OpenLearn</Logo>
             <NavButtons>
-                <Button >Get started</Button>
-                <Button >Login</Button>
+                <Link to="/register">
+                    <Button>Get Started</Button>
+                </Link>
+                <Link to="/login">
+                    <Button>Login</Button>
+                </Link>
             </NavButtons>
         </NavbarContainer>
     );
