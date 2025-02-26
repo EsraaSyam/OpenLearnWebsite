@@ -22,9 +22,17 @@ export const NavbarContainer = styled.nav`
 `;
 
 export const Logo = styled.div`
+  display: flex;
+  align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
+
+  img {
+    width: 40px;
+    height: 40px;
+  }
 `;
+
 
 export const NavButtons = styled.div`
   display: flex;
