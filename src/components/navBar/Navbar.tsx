@@ -1,11 +1,15 @@
 import { Button, NavbarContainer, NavButtons, Logo } from "./Navbar.styles";
 import { Link } from 'react-router-dom';
+import logo from "../../assets/logo2.png";
 
 
 const Navbar = () => {
     return (
         <NavbarContainer>
-            <Logo>OpenLearn</Logo>
+            <Logo>
+                <img src={logo} alt="OpenLearn Logo" width="40" height="40" />
+                OpenLearn 
+                </Logo>
             <NavButtons>
                 <Link to="/register">
                     <Button>Get Started</Button>
