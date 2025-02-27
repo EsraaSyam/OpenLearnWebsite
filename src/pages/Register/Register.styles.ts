@@ -119,9 +119,9 @@ export const SubTitle = styled.p`
   }
 
   @media (max-width: 480px) {
-    width: 80%;
+    width: 93%;
     margin-top: -1.4rem;
-    font-size: 0.6rem;
+    font-size: 0.7rem;
   }
 
   @media (max-width: 377px) {

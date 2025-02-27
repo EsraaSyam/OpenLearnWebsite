@@ -36,6 +36,16 @@ export const Title = styled.h2`
     width: 92%;
     font-size: 1.3rem;
   }
+
+  @media (max-width: 377px) {
+    font-size: 1rem;
+    width: 87%;
+  }
+
+  @media (max-width: 322px) {
+    font-size: 0.9rem;
+    width: 95%;
+  }
 `;
 
 export const Input = styled.input`
@@ -91,8 +101,20 @@ export const SubTitle = styled.p`
   color:rgb(105, 103, 107);
 
   @media (max-width: 768px) {
-    width: 52%;
+    width: 64%;
+    margin-top: -1.4rem;
+    font-size: 0.9rem;
+  }  
+
+  @media (max-width: 377px) {
+    width: 62%;
     margin-top: -1.4rem;
     font-size: 0.7rem;
-  }  
+  }
+
+  @media (max-width: 322px) {
+    width: 65%;
+    margin-top: -1.4rem;
+    font-size: 0.6rem;
+  }
 `;
