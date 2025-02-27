@@ -30,7 +30,7 @@ export const FormWrapper = styled.div`
 export const Title = styled.h2`
   color: #A435F0;
   margin-bottom: 1.5rem;
-  width: 100%;
+  width: 90%;
   font-size: 1.8rem;
 
   @media (max-width: 768px) {
