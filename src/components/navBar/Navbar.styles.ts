@@ -15,10 +15,8 @@ export const NavbarContainer = styled.nav`
   z-index: 1000;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1rem;
   }
-
 `;
 
 export const Logo = styled.div`
@@ -31,8 +29,15 @@ export const Logo = styled.div`
     width: 40px;
     height: 40px;
   }
-`;
 
+  @media (max-width: 768px) {
+    font-size: 1.2rem;
+
+    img {
+      width: 35px;
+      height: 35px;
+  }
+`;
 
 export const NavButtons = styled.div`
   display: flex;
@@ -40,12 +45,9 @@ export const NavButtons = styled.div`
   margin-right: 3rem;
 
   @media (max-width: 768px) {
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    margin-right: 0;
+    gap: 0.7rem; 
+    margin-right: 1.5rem;
   }
-
 `;
 
 export const Button = styled.button`
@@ -63,5 +65,8 @@ export const Button = styled.button`
     color: #A435F0;
   }
 
+  @media (max-width: 768px) {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
   }
 `;

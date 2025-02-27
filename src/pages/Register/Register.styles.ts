@@ -6,6 +6,12 @@ export const RegisterContainer = styled.div`
   align-items: center;
   height: 100vh;
   background-color: #f5f5f5;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 3rem;
+  }
 `;
 
 export const FormWrapper = styled.div`
@@ -13,18 +19,28 @@ export const FormWrapper = styled.div`
   padding: 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 350px;
+  width: 450px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h2`
   color: #A435F0;
   margin-bottom: 1.5rem;
+  width: 77%;
+
+  @media (max-width: 768px) {
+    width: 92%;
+    font-size: 1.3rem;
+  }
 `;
 
 export const Input = styled.input`
-  width: 100%;
-  padding: 0.8rem;
+  width: 90%;
+  padding: 0.6rem;
   margin: 0.5rem 0;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -35,11 +51,15 @@ export const Input = styled.input`
   &:focus {
     border-color: #A435F0;
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `;
 
 export const RegisterButton = styled.button`
-  width: 100%;
-  padding: 0.8rem;
+  width: 90%;
+  padding: 0.7rem;
   margin-top: 1rem;
   background: #A435F0;
   color: white;
@@ -57,4 +77,24 @@ export const RegisterButton = styled.button`
     background: #ccc;
     cursor: not-allowed;
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+  }
+`;
+
+
+export const SubTitle = styled.p`
+  margin-top: -1.4rem;
+  font-size: 0.9rem;
+  color: #666;
+  width: 85%;
+  color:rgb(105, 103, 107);
+
+  @media (max-width: 768px) {
+    width: 92%;
+    margin-top: -1.4rem;
+    font-size: 0.7rem;
+  }
+  
 `;
