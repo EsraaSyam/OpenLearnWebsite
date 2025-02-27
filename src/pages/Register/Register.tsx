@@ -15,8 +15,16 @@ const Register = () => {
     e.preventDefault();
     setLoading(true);
 
+    const nameRegex = /^[A-Za-z]+$/;
+
     if (Object.values(formData).some((value) => value.trim() === "")) {
       setError("All fields are required and cannot be empty spaces.");
+      return;
+    }
+
+    if (!nameRegex.test(formData.firstName) || !nameRegex.test(formData.lastName)) {
+      setError("First name and last name must contain only letters (A-Z or a-z).");
+      setLoading(false);
       return;
     }
 
