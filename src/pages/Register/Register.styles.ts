@@ -34,7 +34,7 @@ export const Title = styled.h2`
 
   @media (max-width: 768px) {
     width: 92%;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 `;
 
@@ -92,9 +92,9 @@ export const SubTitle = styled.p`
   color:rgb(105, 103, 107);
 
   @media (max-width: 768px) {
-    width: 92%;
+    width: 93%;
     margin-top: -1.4rem;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
   
 `;

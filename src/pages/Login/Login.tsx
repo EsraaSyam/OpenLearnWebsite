@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { LoginContainer, FormWrapper, Title, Input, LoginButton } from "./Login.styles";
+import { LoginContainer, FormWrapper, Title, Input, LoginButton, SubTitle } from "./Login.styles";
 import apiClient from "../../utils/apiClient";
 
 const Login = () => {
@@ -8,18 +8,24 @@ const Login = () => {
   const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
     setError(null);
+
+    if (Object.values(formData).some((value) => value.trim() === "")) {
+      setError("All fields are required and cannot be empty spaces.");
+      return
+    }
+
+    setLoading(true);
 
     try {
       const response = await apiClient.post("/auth/login", formData);
       console.log("User logged in successfully:", response.data);
-      alert("Welcome back");
+      alert("Welcome Back To OpenLearn");
     } catch (err: any) {
       console.error("Login failed:", err.response?.data?.message || err.message);
       setError(err.response?.data?.message || "Oops! Something went wrong. Please try again.");
@@ -31,11 +37,12 @@ const Login = () => {
   return (
     <LoginContainer>
       <FormWrapper>
-        <Title> Welcome Back </Title>
+        <Title> Welcome Back To OpenLearn </Title>
+        <SubTitle> Please Enter Your Credentials  </SubTitle>
         {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
         <form onSubmit={handleSubmit}>
-          <Input type="email" name="email" placeholder="Email Address" onChange={handleChange} required />
-          <Input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+          <Input type="email" name="email" placeholder="Email Address" onChange={handleChange} value={formData.email} required />
+          <Input type="password" name="password" placeholder="Password" onChange={handleChange} value={formData.password} required />
           <LoginButton type="submit" disabled={loading}>
             {loading ? "Logging in..." : "Sign In"}
           </LoginButton>
