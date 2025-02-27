@@ -37,6 +37,16 @@ export const Logo = styled.div`
       width: 35px;
       height: 35px;
   }
+
+  @media (max-width: 322px) {
+    font-size: 1rem;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+  }
+
 `;
 
 export const NavButtons = styled.div`
@@ -47,6 +57,11 @@ export const NavButtons = styled.div`
   @media (max-width: 768px) {
     gap: 0.7rem; 
     margin-right: 1.5rem;
+  }
+
+  @media (max-width: 322px) {
+    gap: 0.5rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -68,5 +83,10 @@ export const Button = styled.button`
   @media (max-width: 768px) {
     padding: 0.4rem 0.8rem;
     font-size: 0.9rem;
+  }
+
+  @media (max-width: 322px) {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
   }
 `;

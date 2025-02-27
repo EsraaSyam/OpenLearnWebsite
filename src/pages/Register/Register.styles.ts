@@ -30,13 +30,31 @@ export const FormWrapper = styled.div`
 export const Title = styled.h2`
   color: #A435F0;
   margin-bottom: 1.5rem;
-  width: 77%;
+  width: 100%;
+  font-size: 1.8rem;
 
   @media (max-width: 768px) {
-    width: 92%;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
+    text-align: center;
   }
+
+  @media (max-width: 480px) {
+    font-size: 1.3rem;
+    width: 90%;
+  }
+
+  @media (max-width: 377px) {
+    font-size: 1.1rem;
+    width: 92%;
+  }
+
+  @media (max-width: 322px) {
+    font-size: 0.9rem;
+    width: 95%;
+  }
+
 `;
+
 
 export const Input = styled.input`
   width: 90%;
@@ -52,8 +70,9 @@ export const Input = styled.input`
     border-color: #A435F0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 375px) {
     width: 90%;
+    font-size: 0.9rem;
   }
 `;
 
@@ -80,7 +99,9 @@ export const RegisterButton = styled.button`
 
   @media (max-width: 768px) {
     width: 90%;
+    font-size: 0.9rem;
   }
+
 `;
 
 
@@ -92,6 +113,24 @@ export const SubTitle = styled.p`
   color:rgb(105, 103, 107);
 
   @media (max-width: 768px) {
+    width: 93%;
+    margin-top: -1.4rem;
+    font-size: 0.6rem;
+  }
+
+  @media (max-width: 480px) {
+    width: 80%;
+    margin-top: -1.4rem;
+    font-size: 0.6rem;
+  }
+
+  @media (max-width: 377px) {
+    width: 95%;
+    margin-top: -1.4rem;
+    font-size: 0.6rem;
+  }
+
+  @media (max-width: 322px) {
     width: 97%;
     margin-top: -1.4rem;
     font-size: 0.5rem;
