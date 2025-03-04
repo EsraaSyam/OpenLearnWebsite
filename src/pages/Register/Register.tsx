@@ -17,6 +17,8 @@ const Register = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const token = urlParams.get("token");
 
+    console.log("Received token:", token);
+
     if (token) {
       localStorage.setItem("authToken", token); 
       navigate("/");  
