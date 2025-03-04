@@ -1,11 +1,27 @@
-import { useState } from "react";
-import { RegisterContainer, FormWrapper, Title, Input, RegisterButton, SubTitle } from "./Register.styles";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { 
+  RegisterContainer, FormWrapper, Title, Input, 
+  RegisterButton, SubTitle, GoogleButton, 
+  OrDivider
+} from "./Register.styles";
 import apiClient from "../../utils/apiClient";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get("token");
+
+    if (token) {
+      localStorage.setItem("authToken", token); 
+      navigate("/OpenLearnWebsite");
+    }
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
@@ -28,7 +44,6 @@ const Register = () => {
       return;
     }
 
-
     setError(null);
 
     try {
@@ -42,6 +57,10 @@ const Register = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleGoogleLogin = () => {
+    window.location.href = "https://openlearn-production.up.railway.app/api/v1/auth/google/login";
   };
 
   return (
@@ -59,6 +78,10 @@ const Register = () => {
             {loading ? "Registering..." : "REGISTER NOW"}
           </RegisterButton>
         </form>
+        <OrDivider>OR</OrDivider>
+        <GoogleButton onClick={handleGoogleLogin}>
+          CONTINUEU WITH GOOGLE
+        </GoogleButton>
       </FormWrapper>
     </RegisterContainer>
   );
