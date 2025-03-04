@@ -104,6 +104,44 @@ export const RegisterButton = styled.button`
 
 `;
 
+export const GoogleButton = styled.button`
+  background-color:rgb(255, 255, 255);
+  color: #c1351d;
+  padding: 10px;
+  width: 90%;
+  border: 1px solid #c1351d;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #c1351d;
+    color: white;
+  }
+`;
+
+export const OrDivider = styled.div`
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: 10px auto;
+  font-size: 14px;
+  color: #777;
+  font-weight: bold;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #ccc;
+    margin: 0 10px;
+  }
+`;
+
+
 
 export const SubTitle = styled.p`
   margin-top: -1.4rem;
@@ -137,3 +175,5 @@ export const SubTitle = styled.p`
   }
   
 `;
+
+
