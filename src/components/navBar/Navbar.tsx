@@ -11,10 +11,10 @@ const Navbar = () => {
                 OpenLearn 
                 </Logo>
             <NavButtons>
-                <Link to="OpenLearnWebsite/register">
+                <Link to="/register">
                     <Button>Get Started</Button>
                 </Link>
-                <Link to="OpenLearnWebsite/login">
+                <Link to="/login">
                     <Button>Login</Button>
                 </Link>
             </NavButtons>

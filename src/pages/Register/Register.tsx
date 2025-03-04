@@ -14,16 +14,16 @@ const Register = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const hashParams = new URLSearchParams(window.location.hash.split("?")[1]);
-    const token = hashParams.get("token");
-
-    console.log("Received token:", token);
-
-    if (token) {
-      localStorage.setItem("authToken", token); 
-      navigate("/");  
+    const hash = window.location.hash;
+    const tokenMatch = hash.match(/token=([^&]*)/);
+    
+    if (tokenMatch) {
+        const token = tokenMatch[1];
+        console.log("Received token:", token);
+        localStorage.setItem("authToken", token); 
+        navigate("/");
     }
-  }, [navigate]);
+}, [navigate]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
