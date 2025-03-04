@@ -14,8 +14,8 @@ const Register = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const token = urlParams.get("token");
+    const hashParams = new URLSearchParams(window.location.hash.split("?")[1]);
+    const token = hashParams.get("token");
 
     console.log("Received token:", token);
 
