@@ -19,9 +19,9 @@ const Register = () => {
 
     if (token) {
       localStorage.setItem("authToken", token); 
-      navigate("/OpenLearnWebsite");
+      navigate("/");  
     }
-  }, []);
+  }, [navigate]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
