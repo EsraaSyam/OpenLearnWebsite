@@ -27,6 +27,9 @@ const App: React.FC = () => {
     return (
         <Router>
             <Navbar />
+            <div>
+                {isAuthenticated ? <p>Welcome back!</p> : <p>Please log in</p>}
+            </div>
             <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
