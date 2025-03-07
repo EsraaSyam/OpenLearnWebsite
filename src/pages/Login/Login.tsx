@@ -23,7 +23,9 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await apiClient.post("/auth/login", formData);
+      const response = await apiClient.post("/auth/login", formData, {
+        withCredentials: true,
+      });
       console.log("User logged in successfully:", response.data);
       alert("Welcome Back To OpenLearn");
     } catch (err: any) {
