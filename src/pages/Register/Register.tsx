@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { 
   RegisterContainer, FormWrapper, Title, Input, 
   RegisterButton, SubTitle, GoogleButton, 
@@ -8,22 +7,9 @@ import {
 import apiClient from "../../utils/apiClient";
 
 const Register = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const hash = window.location.hash;
-    const tokenMatch = hash.match(/token=([^&]*)/);
-    
-    if (tokenMatch) {
-        const token = tokenMatch[1];
-        console.log("Received token:", token);
-        localStorage.setItem("authToken", token); 
-        navigate("/");
-    }
-}, [navigate]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value.trim() });
