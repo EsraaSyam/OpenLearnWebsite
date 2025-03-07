@@ -13,7 +13,7 @@ const App: React.FC = () => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
-        axios.get(`${BACKEND_URL}/auth/me`, { withCredentials: true })
+        axios.get(`${BACKEND_URL}/auth/profile`, { withCredentials: true })
             .then((response) => {
                 setIsAuthenticated(true); 
                 console.log("User Data:", response.data);
