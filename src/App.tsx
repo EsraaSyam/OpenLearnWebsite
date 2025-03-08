@@ -18,8 +18,8 @@ const App: React.FC = () => {
                 setIsAuthenticated(true); 
                 console.log("User Data:", response.data);
             })
-            .catch(() => {
-                console.log("User is not authenticated");
+            .catch((err) => {
+                console.log("User not authenticated:", err);
                 setIsAuthenticated(false); 
             });
     }, []);
