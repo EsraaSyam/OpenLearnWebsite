@@ -1,22 +1,29 @@
-import { Button, NavbarContainer, NavButtons, Logo } from "./Navbar.styles";
+import { Button, NavbarContainer, NavButtons, Logo, UserName } from "./Navbar.styles";
 import { Link } from 'react-router-dom';
 import logo from "../../assets/logo2.png";
 
 
-const Navbar = () => {
+const Navbar = ({ user }: { user: { firstName: string } | null }) => {
+    console.log("Navbar user:", user);
     return (
         <NavbarContainer>
             <Logo>
                 <img src={logo} alt="OpenLearn Logo" width="40" height="40" />
-                OpenLearn 
-                </Logo>
+                OpenLearn
+            </Logo>
             <NavButtons>
-                <Link to="/register">
-                    <Button>Get Started</Button>
-                </Link>
-                <Link to="/login">
-                    <Button>Login</Button>
-                </Link>
+                {user ? (
+                    <UserName> {user.firstName}</UserName> 
+                ) : (
+                    <>
+                        <Link to="/register">
+                            <Button>Get Started</Button>
+                        </Link>
+                        <Link to="/login">
+                            <Button>Login</Button>
+                        </Link>
+                    </>
+                )}
             </NavButtons>
         </NavbarContainer>
     );

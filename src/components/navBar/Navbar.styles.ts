@@ -90,3 +90,29 @@ export const Button = styled.button`
     font-size: 0.8rem;
   }
 `;
+
+export const UserName = styled.span`
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  text-transform: capitalize;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: white;
+    color: #A435F0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.3rem 0.7rem;
+  }
+
+  @media (max-width: 322px) {
+    font-size: 0.9rem;
+    padding: 0.2rem 0.6rem;
+  }
+`;

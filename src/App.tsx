@@ -8,28 +8,24 @@ import axios from 'axios';
 
 const BACKEND_URL = "https://openlearn-production.up.railway.app/api/v1";
 
-
 const App: React.FC = () => {
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [user, setUser] = useState<{ firstName: string } | null>(null);
+
 
     useEffect(() => {
         axios.get(`${BACKEND_URL}/auth/profile`, { withCredentials: true })
             .then((response) => {
-                setIsAuthenticated(true); 
-                console.log("User Data:", response.data);
+                setUser(response.data); 
             })
             .catch((err) => {
-                console.log("User not authenticated:", err);
-                setIsAuthenticated(false); 
+                console.error("User not logged in:", err.response?.data?.message || err.message);
+                setUser(null); 
             });
     }, []);
     
     return (
         <Router>
-            <Navbar />
-            <div>
-                {isAuthenticated ? <p>Welcome back!</p> : <p>Please log in</p>}
-            </div>
+            <Navbar user={user} />
             <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
