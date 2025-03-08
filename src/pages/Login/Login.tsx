@@ -28,6 +28,7 @@ const Login = () => {
       });
       console.log("User logged in successfully:", response.data);
       alert("Welcome Back To OpenLearn");
+      window.location.href = "/";
     } catch (err: any) {
       console.error("Login failed:", err.response?.data?.message || err.message);
       setError(err.response?.data?.message || "Oops! Something went wrong. Please try again.");
