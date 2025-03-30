@@ -1,10 +1,11 @@
 import './App.css'
 import Navbar from './components/navBar/Navbar';
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
-import Register from './pages/Register/Register';
-import Login from './pages/Login/Login';
+import Register from './pages/Auth/Register/Register';
+import Login from './pages/Auth/Login/Login';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import CreateCourse from './pages/Courses/CreateCourse';
 
 const BACKEND_URL = "https://openlearn-production.up.railway.app/api/v1";
 
@@ -29,6 +30,7 @@ const App: React.FC = () => {
             <Routes>
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/create-course" element={<CreateCourse />} />
             </Routes>
         </Router>
     );

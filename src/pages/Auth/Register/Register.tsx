@@ -4,7 +4,7 @@ import {
   RegisterButton, SubTitle, GoogleButton, 
   OrDivider
 } from "./Register.styles";
-import apiClient from "../../utils/apiClient";
+import apiClient from "../../../utils/apiClient";
 
 const Register = () => {
   const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", password: "" });
