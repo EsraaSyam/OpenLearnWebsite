@@ -1,13 +1,11 @@
 import { useState } from "react";
 import apiClient from "../../utils/apiClient";
 import { Button, FormWrapper, Input, PageContainer, Title } from "./CreateSection.styles";
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const CreateSection = () => {
-    const location = useLocation();
-    const courseIdFromState = location.state?.courseId || "";
+    const { courseId } = useParams<{ courseId: string }>();
     const [title, setTitle] = useState("");
-    const [courseId, setCourseId] = useState(courseIdFromState); 
 
     console.log("Course ID from state:", courseId);
 

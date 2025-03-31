@@ -9,19 +9,31 @@ const CreateCourse = () => {
     const [difficultyLevel, setDifficultyLevel] = useState("beginner");
     const [price, setPrice] = useState(0);
     const navigate = useNavigate();
+    
 
     const handleCreateCourse = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (title.trim() === "" || description.trim() === "") {
+            alert("Title and description cannot be empty spaces.");
+            return;
+        }
+
+        if (price < 0 || isNaN(price)) {  
+            alert("Price must be a positive number.");
+            return;
+        }
+
         try {
             const response = await apiClient.post(`/course`, {
                 title,
                 description,
                 difficultyLevel,
-                price,
+                price: price,
             });
             alert("Course Created Successfully!");
             console.log(response.data.data.id); 
-            navigate("/create-section", { state: { courseId: response.data.data.id } });
+            navigate(`/create-course/${response.data.data.id}/create-section`);
         } catch (error: any) {
             console.error("Error creating course:", error.response?.data?.message || error.message);
         }
@@ -39,7 +51,8 @@ const CreateCourse = () => {
                         <option value="intermediate">Intermediate</option>
                         <option value="advanced">Advanced</option>
                     </Select>
-                    <Input type="number" placeholder="Price" value={price} onChange={(e) => setPrice(Number(e.target.value))} required />
+                    <Input type="number" placeholder="Price" 
+                    onChange={(e) => setPrice(Number(e.target.value))} required />
                     <Button type="submit">Create Course</Button>
                 </form>
             </FormWrapper>
