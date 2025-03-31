@@ -11,6 +11,12 @@ const CreateSection = () => {
 
     const handleCreateSection = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        if (title.trim() === "") {
+            alert("Title cannot be empty spaces.");
+            return;
+        }
+        
         try {
             const response = await apiClient.post(`/section`, {
                 title,
