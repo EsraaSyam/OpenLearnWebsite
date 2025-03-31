@@ -2,9 +2,7 @@ import { Button, NavbarContainer, NavButtons, Logo, UserName } from "./Navbar.st
 import { Link } from 'react-router-dom';
 import logo from "../../assets/logo2.png";
 
-
 const Navbar = ({ user }: { user: { firstName: string } | null }) => {
-    console.log("Navbar user:", user);
     return (
         <NavbarContainer>
             <Logo>
@@ -13,7 +11,12 @@ const Navbar = ({ user }: { user: { firstName: string } | null }) => {
             </Logo>
             <NavButtons>
                 {user ? (
-                    <UserName> {user.firstName}</UserName> 
+                    <>
+                        <UserName>{user.firstName}</UserName>
+                        <Link to="/create-course">
+                            <Button>Create Course</Button>
+                        </Link>
+                    </>
                 ) : (
                     <>
                         <Link to="/register">
