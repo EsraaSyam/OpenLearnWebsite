@@ -6,6 +6,7 @@ import Login from './pages/Auth/Login/Login';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import CreateCourse from './pages/Courses/CreateCourse';
+import CreateSection from './pages/sections/CreateSection';
 
 const BACKEND_URL = "https://openlearn-production.up.railway.app/api/v1";
 
@@ -31,6 +32,7 @@ const App: React.FC = () => {
                 <Route path="/register" element={<Register />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/create-course" element={<CreateCourse />} />
+                <Route path="/create-section" element={<CreateSection />} />
             </Routes>
         </Router>
     );

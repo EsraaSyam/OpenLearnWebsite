@@ -1,12 +1,14 @@
 import { useState } from "react";
 import apiClient from "../../utils/apiClient";
 import { Button, FormWrapper, Input, PageContainer, Select, TextArea, Title } from "./CreateCourse.styles";
+import { useNavigate } from "react-router-dom";
 
 const CreateCourse = () => {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [difficultyLevel, setDifficultyLevel] = useState("beginner");
     const [price, setPrice] = useState(0);
+    const navigate = useNavigate();
 
     const handleCreateCourse = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -18,7 +20,8 @@ const CreateCourse = () => {
                 price,
             });
             alert("Course Created Successfully!");
-            console.log(response.data); 
+            console.log(response.data.data.id); 
+            navigate("/create-section", { state: { courseId: response.data.data.id } });
         } catch (error: any) {
             console.error("Error creating course:", error.response?.data?.message || error.message);
         }
